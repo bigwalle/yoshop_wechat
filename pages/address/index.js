@@ -52,7 +52,7 @@ Page({
       address_id = e.currentTarget.dataset.id;
     wx.showModal({
       title: "提示",
-      content: "您确定要移除当前收货地址吗?",
+      content: "您确定要移除当前取货地址吗?",
       success: function(o) {
         o.confirm && App._post_form('address/delete', {
           address_id

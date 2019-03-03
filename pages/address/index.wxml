@@ -38,7 +38,7 @@
   <view wx:else>
     <view class="yoshop-notcont">
       <text class="iconfont icon-wushuju"></text>
-      <text class="cont">亲，您还没有收货列表</text>
+      <text class="cont">亲，您还没有取货列表</text>
     </view>
   </view>
   <view class="footer-fixed f-32">

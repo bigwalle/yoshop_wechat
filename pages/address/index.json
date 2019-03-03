@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "收货地址",
+  "navigationBarTitleText": "取货地址",
   "usingComponents": {
     "shortcut": "/components/shortcut/shortcut"
   }
