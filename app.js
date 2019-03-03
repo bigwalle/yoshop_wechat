@@ -18,7 +18,7 @@ App({
     user_id: null,
   },
 
-  api_root: '', // api地址
+  api_root: 'https://xcx.jtwenty.club', // api地址
   siteInfo: require('siteinfo.js'),
 
   /**
