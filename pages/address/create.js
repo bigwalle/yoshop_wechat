@@ -8,12 +8,11 @@ Page({
   data: {
     disabled: false,
     nav_select: false, // 快捷导航
-
     name: '',
     region: '',
     phone: '',
     detail: '',
-
+    schoolArray:[{}],
     error: '',
   },
 
@@ -21,17 +20,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    this.getSchoolList();
   },
-
+  /**
+   * 获取学校地址列表
+   */
+  getSchoolList: function() {
+    let _this = this;
+    App._get('school/lists', {}, function(result) {
+      _this.setData(result.data)
+      _this.data.schoolArray =result.data;
+    });
+  },
   /**
    * 表单提交
    */
   saveData: function(e) {
     let _this = this,
       values = e.detail.value
-    values.region = this.data.region;
-
+      values.region = this.data.region;
     // 记录formId
     // App.saveFormId(e.detail.formId);
 
@@ -80,6 +87,10 @@ Page({
       this.data.error = '手机号不符合要求';
       return false;
     }
+    if (values.goods_address==="") {
+      this.data.error = '取货地址不能为空';
+      return false;
+    }
     if (!this.data.region) {
       this.data.error = '省市区不能空';
       return false;
@@ -99,5 +110,12 @@ Page({
       region: e.detail.value
     })
   },
-
+  /**
+   * 修改地区
+   */
+  bindSchoolChange: function(e) {
+    this.setData({
+      index:e.detail.value,
+    })
+  },
 })

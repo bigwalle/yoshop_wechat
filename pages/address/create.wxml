@@ -11,7 +11,7 @@
           <input name="name" placeholder="请输入取货人姓名" value="{{name}}"></input>
         </view>
       </view>
-      <view class="list address-box dis-flex">
+      <view class="list address-box dis-flex b-b">
         <view class="left-name">
           <text class="f-30">手机号</text>
         </view>
@@ -19,7 +19,29 @@
           <input maxlength="11" name="phone" placeholder="请输入取货人联系电话" type="number" value="{{phone}}"></input>
         </view>
       </view>
+
+       <view class="list address-box dis-flex b-b">
+              <view class="left-name">
+                <text class="f-30">学校地址</text>
+              </view>
+              <view class="right-cont flex-box">
+                <picker bindchange="bindSchoolChange" value="{{index}}" range-key="name" range="{{list}}">
+                    <text  wx:if="{{index}}" class="f-30 ">{{list[index].name}}</text>
+                    <text  wx:else class="f-30 col-7">选择学校</text>
+                </picker>
+                <input name="school_id" value="{{list[index].id}}" hidden="true"></input>
+              </view>
+            </view>
+      <view class="dis-flex list address-box">
+        <view class="left-name">
+          <text class="f-30">取货地址</text>
+        </view>
+        <view class="right-cont flex-box">
+          <input name="goods_address" placeholder="请输入取货地址" type="text" value="{{detail}}"></input>
+        </view>
+      </view>
     </view>
+
     <view class="address-cont-title b-f b-b">
       <view class="dis-flex list address-box m-top20 b-b">
         <view class="left-name">

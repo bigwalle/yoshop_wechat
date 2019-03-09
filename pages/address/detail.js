@@ -20,6 +20,8 @@ Page({
   onLoad: function(options) {
     // 获取当前地址信息
     this.getAddressDetail(options.address_id);
+
+
   },
 
   /**
@@ -110,5 +112,4 @@ Page({
       region: e.detail.value
     })
   },
-
 })
