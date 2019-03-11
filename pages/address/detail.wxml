@@ -57,7 +57,7 @@
           <text class="f-30">详细地址</text>
         </view>
         <view class="right-cont flex-box">
-          <input name="detail" placeholder="请输入街道小区楼层" type="text" value="{{detail.detail}}"></input>
+          <input name="detail" placeholder="请输入所在的学校、宿舍楼、门牌号" type="text" value="{{detail.detail}}"></input>
         </view>
       </view>
     </view>
