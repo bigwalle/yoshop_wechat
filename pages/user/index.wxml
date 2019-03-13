@@ -76,12 +76,38 @@
         </view>
       </button>
     </form>
-    <form bindsubmit="onTargetMenus" data-url="pages/user/help" report-submit="true">
+    <form bindsubmit="onTargetMenus" data-url="pages/user/feedback" report-submit="true">
       <button formType="submit" class="btn-normal">
         <view class="menus-item dis-flex b-f">
           <view class="menus-item__left flex-box dis-flex flex-y-center">
             <text class="iconfont icon-help f-34"></text>
-            <text class="menus-item__name f-30">我的帮助</text>
+            <text class="menus-item__name f-30">用户反馈</text>
+          </view>
+          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
+            <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
+          </view>
+        </view>
+      </button>
+    </form>
+     <form bindsubmit="onTargetMenus" data-url="pages/user/help" report-submit="true">
+      <button   class="btn-normal" open-type="contact">
+        <view class="menus-item dis-flex b-f">
+          <view class="menus-item__left flex-box dis-flex flex-y-center">
+            <text class="iconfont icon-help f-34"></text>
+            <text class="menus-item__name f-30">我的客服</text>
+          </view>
+          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
+            <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
+          </view>
+        </view>
+      </button>
+    </form>
+       <form bindsubmit="onTargetMenus" data-url="pages/user/help" report-submit="true">
+      <button formType="submit" class="btn-normal">
+        <view class="menus-item dis-flex b-f">
+          <view class="menus-item__left flex-box dis-flex flex-y-center">
+            <text class="iconfont icon-help f-34"></text>
+            <text class="menus-item__name f-30">加入我们</text>
           </view>
           <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
             <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
