@@ -34,6 +34,7 @@ Page({
     let _this = this;
     App._get('index/page', {}, function(result) {
       _this.setData(result.data);
+      console.log(result.data);
     });
   },
 

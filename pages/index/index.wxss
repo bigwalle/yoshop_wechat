@@ -39,3 +39,9 @@
   margin-top: 1px;
   z-index: -1;
 }
+ .del {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 6rpx;
+  TEXT-DECORATION: line-through;
+}
