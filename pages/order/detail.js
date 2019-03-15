@@ -25,6 +25,7 @@ Page({
     let _this = this;
     App._get('user.order/detail', { order_id }, function (result) {
       _this.setData(result.data);
+      console.log(result.data);
     });
   },
 

@@ -36,14 +36,21 @@
         <view class="left-name">
           <text class="f-30">取货地址</text>
         </view>
+        <!-- <view class="right-cont flex-box">
+          <input name="goods_address" placeholder="请输入取货地址" type="text" value="{{goods_address}}"></input>
+        </view> -->
         <view class="right-cont flex-box">
-          <input name="goods_address" placeholder="请输入取货地址" type="text" value="{{detail}}"></input>
-        </view>
+                <picker bindchange="bindGoodAdress" value="{{index}}"  range="{{goodAdress}}">
+                    <text  wx:if="{{goods_address}}" class="f-30 ">{{goods_address}}</text>
+                    <text  wx:else class="f-30 col-7">选择取货点</text>
+                </picker>
+                <input name="goods_address" value="{{goods_address}}" hidden="true"></input>
+              </view>
       </view>
     </view>
 
     <view class="address-cont-title b-f b-b">
-      <view class="dis-flex list address-box m-top20 b-b">
+      <!-- <view class="dis-flex list address-box m-top20 b-b">
         <view class="left-name">
           <text class="f-30">所在地区</text>
         </view>
@@ -52,8 +59,8 @@
             <text wx:if="{{region}}" class="f-30">{{region}}</text>
             <text wx:else class="f-30 col-7">选择省、市、区</text>
           </picker>
-        </view>
-      </view>
+        </view> -->
+      <!-- </view> -->
       <view class="dis-flex list address-box">
         <view class="left-name">
           <text class="f-30">详细地址</text>

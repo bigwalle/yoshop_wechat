@@ -135,7 +135,6 @@ App({
         data: data,
         success(res) {
           if (res.statusCode !== 200 || typeof res.data !== 'object') {
-            console.log(res);
             App.showError('网络请求出错');
             return false;
           }
@@ -201,7 +200,6 @@ App({
         success && success(res.data);
       },
       fail(res) {
-        // console.log(res);
         App.showError(res.errMsg, function() {
           fail && fail(res);
         });

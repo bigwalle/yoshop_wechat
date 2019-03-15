@@ -9,10 +9,12 @@ Page({
     disabled: false,
     nav_select: false, // 快捷导航
     name: '',
-    region: '',
+    region:  ["青海省", "西宁市", "城北区"],
     phone: '',
     detail: '',
     schoolArray:[{}],
+    goodAdress: ['青海大学图书馆'],
+    goods_address:"青海大学图书馆",
     error: '',
   },
 
@@ -118,4 +120,9 @@ Page({
       index:e.detail.value,
     })
   },
+  bindGoodAdress :function(e){
+    this.setData({ 
+      goods_address: this.data.goodAdress[e.detail.value],
+      })
+  }
 })
