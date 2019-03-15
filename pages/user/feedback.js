@@ -8,6 +8,8 @@ Page({
    */
   data: {
 
+      feedContent:"",
+      phone :'',
   },
 
   /**
@@ -64,5 +66,19 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  submitData(e){
+    console.log(this.phone);
+    console.log(this.feedContent);
+  },
+  textareaInput2: function (e) {
+    console.log(e.detail.value)
+   this.feedContent = e.detail.value
+  },
+   relationInput:function(e){
+    console.log(e.detail.value),
+      this.phone = e.detail.value;
+   }
+
 })

@@ -19,14 +19,33 @@
 
 }
 .relation{
-  padding: 10rpx;
+  padding: 15rpx;
   font-size: 30rpx;
   left: 20rpx;
   background-color:white;
+  top: 10rpx;
+  height: 40rpx;
 }
 .submitBtn{
   /* padding: 5rpx; */
   /* height: 80rpx; */
-  top:20rpx;
+  top:120rpx;
   background-color: rgba(255, 241, 47, 0.63);
 }
+.contentView{
+  width: 100%;
+  margin-top: 40rpx;
+}
+.textarea_title{
+  margin-left: 20rpx;
+  color: gray
+}
+.textarea_bg{
+  padding: 0 25rpx;
+  background-color: #fff;
+}
+textarea{
+  width: 700rpx;
+  padding: 25rpx 0;
+  height: 200rpx;
+} 

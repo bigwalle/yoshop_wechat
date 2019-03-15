@@ -4,15 +4,18 @@
 
   <view  class='feed'>
   <text class='title'>反馈内容</text>
-  <textarea class='feedContant' name="feedback" placeholder="请输入需要反馈的问题" value="{{feedback}}"></textarea>
+  <!-- <textarea class='feedContant' name="feedback" placeholder="请输入需要反馈的问题" value="{{feedback}}"></textarea> -->
+   <view class="textarea_bg">
+    <textarea bindinput="textareaInput2" style="height: 4em" maxlength="-1" />
+  </view>
   </view>
    <view >
   <text class='title' >联系方式</text>
-   <input class='relation' name="relation" placeholder="请输入手机号方便我们及时联系" value="{{relation}}"></input>
+   <input class='relation' bindinput='relationInput'  name="relation" placeholder="请输入手机号方便我们及时联系" value="{{relation}}"></input>
   </view>
 
   <view >
-  <button  class='submitBtn'  formType="submit" >提交</button>
+  <button  class='submitBtn'  bindtap='submitData'  formType="submit" >提交</button>
   </view>
  </form>
 </view>
