@@ -8,7 +8,7 @@ Page({
    */
   data: {
 
-      feedContent:"",
+      feedContent:'',
       phone :'',
   },
 
@@ -68,9 +68,19 @@ Page({
 
   },
 
-  submitData(e){
+  submitData:function(e){
     console.log(this.phone);
     console.log(this.feedContent);
+
+    if (!this.feedContent) {
+      App.showError('反馈信息不能为空');
+      return false;
+    }else{
+      App.showSuccess("已提交", function () {
+        wx.navigateBack();
+      });
+    }
+ 
   },
   textareaInput2: function (e) {
     console.log(e.detail.value)
