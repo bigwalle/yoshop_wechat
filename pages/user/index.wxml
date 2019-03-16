@@ -76,7 +76,7 @@
         </view>
       </button>
     </form>
-    <form bindsubmit="onTargetMenus" data-url="pages/user/feedback" report-submit="true">
+    <!-- <form bindsubmit="onTargetMenus" data-url="pages/user/feedback" report-submit="true">
       <button formType="submit" class="btn-normal">
         <view class="menus-item dis-flex b-f">
           <view class="menus-item__left flex-box dis-flex flex-y-center">
@@ -88,7 +88,7 @@
           </view>
         </view>
       </button>
-    </form>
+    </form> -->
      <form bindsubmit="onTargetMenus" data-url="pages/user/help" report-submit="true">
       <button   class="btn-normal" open-type="contact">
         <view class="menus-item dis-flex b-f">
