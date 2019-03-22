@@ -1,9 +1,3 @@
-/* 通用 */
-
-page {
-  background: #fff;
-}
-
 /* 搜索框 */
 
 .index-search-box {
@@ -24,9 +18,69 @@ page {
   line-height: 64rpx;
 }
 
+/* 通用 */
+
+page {
+  background: #fff;
+}
+
+.cate-content {
+  background: #fff;
+}
+
+.cate-wrapper {
+  padding: 0 20rpx 20rpx 20rpx;
+  box-sizing: border-box;
+}
+
+/* 一级分类(大图) 10 */
+
+.cate_style__10 .cate-item {
+  margin-bottom: 18rpx;
+}
+
+.cate_style__10 .cate-item:last-child {
+  margin-bottom: 0;
+}
+
+.cate_style__10 .cate-item image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 一级分类(小图) 11 */
+
+.cate_style__11 .cate-item {
+  float: left;
+  padding: 25rpx;
+  width: 33.3333%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.cate_style__11 .cate-item image {
+  /* height: 208.656rpx; */
+  width: 100%;
+  display: block;
+}
+
+.cate_style__11 .cate-item image {
+  /* height: 208.656rpx; */
+  display: block;
+  width: 100%;
+  margin-bottom: 10rpx;
+}
+
+.cate_style__11 .cate-item text {
+  display: block;
+  color: #555;
+}
+
+/* 二级分类 20 */
+
 .cate-content {
   width: 100%;
-  background: #fff;
 }
 
 .cate-left {

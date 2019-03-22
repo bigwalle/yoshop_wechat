@@ -8,7 +8,37 @@
       </view>
     </navigator>
   </view>
-  <view class="cate-content dis-flex" wx:if="{{ list.length > 0 }}">
+
+  <!-- 分类样式：一级分类(大图) 10 -->
+  <view class="cate-content" wx:if="{{ templet.category_style == 10 && list.length > 0 }}">
+    <view class="cate-wrapper cate_style__10">
+      <scroll-view scroll-y="true" style="height: {{scrollHeight - 10}}px; ">
+        <view class="cate-item" wx:for="{{list}}" wx:key="this">
+          <navigator hover-class="none" url="../category/list?category_id={{item.category_id}}">
+            <image mode="widthFix" src="{{item.image.file_path}}"></image>
+          </navigator>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 分类样式：一级分类(小图) 11 -->
+  <view class="cate-content" wx:elif="{{ templet.category_style == 11 && list.length > 0 }}">
+    <view class="cate-wrapper cate_style__11">
+      <scroll-view class="clear" scroll-y="true" style="height: {{ scrollHeight - 10 }}px; ">
+        <view class="cate-item" wx:for="{{ list }}" wx:key="this">
+          <navigator hover-class="none" url="../category/list?category_id={{item.category_id}}">
+            <image mode="widthFix" src="{{ item.image.file_path }}"></image>
+            <text class="f-26">{{ item.name }}</text>
+          </navigator>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 分类样式：二级分类 20 -->
+  <view class="cate-content dis-flex" wx:elif="{{ templet.category_style == 20 && list.length > 0 }}">
+
     <!-- 左侧 一级分类 -->
     <scroll-view class="cate-left f-28" scroll-y="{{ true }}" style="height: {{ scrollHeight }}px; ">
       <text bindtap="selectNav" class="type-nav {{curNav==item.category_id?'selected':''}}" data-id="{{ item.category_id }}" data-index="{{index}}" wx:for="{{list}}" wx:key="cateLeft">{{ item.name }}</text>

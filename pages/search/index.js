@@ -13,14 +13,14 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     // 获取历史搜索
     this.getRecentSearch();
   },
@@ -28,25 +28,29 @@ Page({
   /**
    * 获取历史搜索
    */
-  getRecentSearch: function () {
+  getRecentSearch: function() {
     let recentSearch = wx.getStorageSync('recentSearch');
-    this.setData({ recentSearch });
+    this.setData({
+      recentSearch
+    });
   },
 
   /**
    * 绑定输入值
    */
-  getSearchContent: function (e) {
+  getSearchContent: function(e) {
     this.data.searchValue = e.detail.value;
   },
 
   /**
    * 搜索提交
    */
-  search: function () {
+  search: function() {
     if (this.data.searchValue) {
       // 记录最近搜索
       let recentSearch = wx.getStorageSync('recentSearch') || [];
+      let index = recentSearch.indexOf(this.data.searchValue);
+      index > -1 && recentSearch.splice(index, 1);
       recentSearch.unshift(this.data.searchValue);
       wx.setStorageSync('recentSearch', recentSearch)
       // 跳转到商品列表页
@@ -59,7 +63,7 @@ Page({
   /**
    * 清空最近搜索记录
    */
-  clearSearch: function () {
+  clearSearch: function() {
     wx.removeStorageSync('recentSearch');
     this.getRecentSearch();
   },
@@ -67,7 +71,7 @@ Page({
   /**
    * 跳转到最近搜索
    */
-  goSearch: function (e) {
+  goSearch: function(e) {
     wx.navigateTo({
       url: '../category/list?search=' + e.target.dataset.text,
     })

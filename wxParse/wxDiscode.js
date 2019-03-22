@@ -61,7 +61,7 @@ function l(e) {
 }
 
 function p(e) {
-    return e = e.replace(/\r\n/g, ""), e = e.replace(/\n/g, ""), e = e.replace(/code/g, "wxxxcode-style");
+    return e = e.replace(/\r\n/g, ""), e = e.replace(/\n/g, "");
 }
 
 module.exports = {

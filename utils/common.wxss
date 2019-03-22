@@ -263,6 +263,14 @@
   margin-top: 25rpx;
 }
 
+.m-l-10 {
+  margin-left: 10rpx;
+}
+
+.m-l-20 {
+  margin-left: 20rpx;
+}
+
 .p-bottom {
   padding-bottom: 112rpx;
 }

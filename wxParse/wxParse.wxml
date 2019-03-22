@@ -365,6 +365,6 @@
 </template>
 <template name="wxParseVideo">
   <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
-    <video class="{{item.classStr}} wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+    <video class="{{item.classStr}} wxParse-{{item.tag}}-video" src="{{item.attr.src}}" poster="{{ item.attr.poster }}" controls></video>
   </view>
 </template>

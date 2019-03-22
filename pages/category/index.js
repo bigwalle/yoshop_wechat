@@ -48,10 +48,11 @@ Page({
    */
   getCategoryList: function() {
     let _this = this;
-    App._get('category/lists', {}, function(result) {
+    App._get('category/index', {}, function(result) {
       let data = result.data;
       _this.setData({
         list: data.list,
+        templet: data.templet,
         curNav: data.list.length > 0 ? data.list[0].category_id : true,
         notcont: !data.list.length
       });
@@ -75,9 +76,10 @@ Page({
    * 设置分享内容
    */
   onShareAppMessage: function() {
+    let _this = this;
     return {
-      title: "全部分类",
-      path: "/pages/category/index"
+      title: _this.data.templet.share_title,
+      path: "/pages/category/index?" + App.getShareUrlParams()
     };
   }
 

@@ -37,6 +37,8 @@ Component({
      * 导航菜单切换事件
      */
     _onToggleShow(e) {
+      // 记录formid
+      App.saveFormId(e.detail.formId);
       this.setData({
         isShow: !this.data.isShow,
         transparent: false
@@ -48,6 +50,8 @@ Component({
      */
     _onTargetPage(e) {
       let urls = App.getTabBarLinks();
+      // 记录formid
+      App.saveFormId(e.detail.formId);
       wx.switchTab({
         url: '/' + urls[e.detail.target.dataset.index]
       });
