@@ -13,8 +13,8 @@ Page({
     phone: '',
     detail: '',
     schoolArray:[{}],
-    goodAdress: ['青海大学图书馆'],
-    goods_address:"青海大学图书馆",
+    goodAdress: ['青海大学长悦小广场'],
+    goods_address:"青海大学长悦小广场",
     error: '',
   },
 

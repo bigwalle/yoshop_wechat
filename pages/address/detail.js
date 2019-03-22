@@ -8,10 +8,10 @@ Page({
   data: {
     disabled: false,
     nav_select: false, // 快捷导航
-    region: '青海省西宁市城北区',
+    region: ["青海省", "西宁市", "城北区"],
     detail: {},
-    goodAdress: ['青海大学图书馆'],
-    goods_address: "青海大学图书馆",
+    goodAdress: ['青海大学长悦小广场'],
+    goods_address: "青海大学长悦小广场",
     error: '',
   },
 
