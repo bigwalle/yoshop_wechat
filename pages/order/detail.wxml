@@ -24,7 +24,7 @@
             <text class="detail-content__title-phone f-28">{{ order.address.phone }}</text>
           </view>
           <view class="detail-content__describe">
-            <text class="col-7">{{order.address.region.province}} {{order.address.region.city}} {{order.address.region.region}} {{address.detail}}</text>
+            <text class="col-7">{{order.address.region.province}}  {{order.address.region.region}} {{order.address.detail}}</text>
           </view>
         </view>
       </view>
