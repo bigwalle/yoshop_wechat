@@ -41,6 +41,7 @@ Page({
     let _this = this,
       values = e.detail.value
       values.region = this.data.region;
+    values.goods_address = this.data.goods_address;
     // 记录formId
     // App.saveFormId(e.detail.formId);
 
@@ -57,6 +58,7 @@ Page({
 
     // 提交到后端
     App._post_form('address/add', values, function(result) {
+       console.log(result);
       App.showSuccess(result.msg, function() {
         wx.navigateBack();
       });

@@ -57,6 +57,7 @@ Page({
     let _this = this,
       values = e.detail.value
     values.region = this.data.region;
+    values.goods_address = this.data.goods_address;
 
     // 记录formId
     // App.saveFormId(e.detail.formId);

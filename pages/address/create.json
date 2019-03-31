@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "新增取货地址",
+    "navigationBarTitleText": "新增联系地址",
     "usingComponents": {
       "shortcut": "/components/shortcut/shortcut"
     }

@@ -78,6 +78,8 @@ Page({
         _this.data.error = result.data.error_msg;
         App.showError(_this.data.error);
       }
+      console.log(result.data);
+
       _this.setData(result.data);
     };
     // 立即购买
@@ -144,7 +146,6 @@ Page({
   submitOrder: function() {
     let _this = this,
       options = _this.data.options;
-
     if (_this.data.disabled) {
       return false;
     }
