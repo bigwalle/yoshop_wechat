@@ -220,3 +220,7 @@
   color: #fff;
   font-size: 26rpx;
 }
+.address-cont-title .list {
+  width: auto;
+  padding: 24rpx;
+}

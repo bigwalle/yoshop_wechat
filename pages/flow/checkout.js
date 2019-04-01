@@ -31,8 +31,10 @@ Page({
       reduced_price: '0.00'
     },
 
-    // 买家留言
+    // 买家留言 取货人 取货人手机
     remark: '',
+    pick_name: '',
+    pick_mobile: '1',
 
     // 禁用submit按钮
     disabled: false,
@@ -72,15 +74,21 @@ Page({
         App.showError(result.msg);
         return false;
       }
+  
       // 显示错误信息
       if (result.data.has_error) {
         _this.data.hasError = true;
         _this.data.error = result.data.error_msg;
         App.showError(_this.data.error);
       }
-      console.log(result.data);
-
       _this.setData(result.data);
+      console.log(result.data);
+      console.log(result.data.address.name);
+
+
+      _this.data.pick_name = result.data.address.name;
+      _this.data.pick_mobile = result.data.address.phone;
+
     };
     // 立即购买
     if (options.order_type === 'buyNow') {
@@ -144,8 +152,33 @@ Page({
    * 订单提交
    */
   submitOrder: function() {
+
+    console.log(this.data.pick_name);
+    console.log(this.data.pick_mobile);
+
+    if (this.data.pick_name === '') {
+      // this.data.error = '收件人不能为空';
+      App.showError('收件人不能为空');
+      return false;
+    }
+    if (this.data.pick_mobile.length < 1) {
+      App.showError('手机号不能为空');
+      return false;
+    }
+    if (this.data.pick_mobile.length !== 11) {
+      App.showError('手机号长度有误');
+
+      return false;
+    }
+    let reg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
+    if (!reg.test(this.data.pick_mobile)) {
+      App.showError('手机号不符合要求');
+
+      return false;
+    }
     let _this = this,
       options = _this.data.options;
+
     if (_this.data.disabled) {
       return false;
     }
@@ -207,7 +240,9 @@ Page({
         delivery: _this.data.currentDelivery,
         shop_id: _this.data.selectedShopId,
         coupon_id: _this.data.selectCoupon.couponId,
-        remark: _this.data.remark
+        remark: _this.data.remark,
+        pick_name:_this.data.pick_name,
+        pick_mobile: _this.data.pick_mobile
       }, function(result) {
         // success
         console.log('success');
@@ -231,10 +266,12 @@ Page({
         delivery: _this.data.currentDelivery,
         shop_id: _this.data.selectedShopId,
         coupon_id: _this.data.selectCoupon.couponId,
-        remark: _this.data.remark
+        remark: _this.data.remark,
+        pick_name: _this.data.pick_name,
+        pick_mobile: _this.data.pick_mobile
       }, function(result) {
         // success
-        console.log('success');
+        console.log('success==='+result.data);
         callback(result);
       }, function(result) {
         // fail
@@ -254,9 +291,26 @@ Page({
    * 买家留言
    */
   bindRemark: function(e) {
+    console.log(e.detail.value);
+
     this.setData({
       remark: e.detail.value
     })
+  },
+  bindName: function (e) {
+    console.log(e.detail.value);
+    console.log(this.data);
+
+    this.setData({
+      pick_name: e.detail.value
+    })
+  },
+  bindMobile: function (e) {
+    console.log(e.detail.value);
+    this.setData({
+      pick_mobile: e.detail.value
+    })
+
   },
 
   /**

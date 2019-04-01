@@ -88,6 +88,27 @@
   </view>
 
   <!-- 买家留言 -->
+   <block wx:if="{{extract_shop.shop_id }}">
+   <view class="address-cont-title b-f b-b m-top20">
+   <view class="list address-box dis-flex b-b">
+        <view class="left-name">
+          <text class="f-30">取货人</text>
+        </view>
+        <view class="right-cont flex-box">
+          <input bindinput="bindName" name="pick_name" placeholder="请输入取货人姓名" value="{{pick_name}}"></input>
+        </view>
+      </view>
+      <view class="list address-box dis-flex b-b">
+        <view class="left-name">
+          <text class="f-30">手机号</text>
+        </view>
+        <view class="right-cont flex-box">
+          <input bindinput="bindMobile"  maxlength="11" name="pick_mobile" placeholder="请输入取货人联系电话" type="number" value="{{pick_mobile}}"></input>
+        </view>
+      </view>
+     </view>
+  </block>
+
   <view class="flow-all-money b-f m-top20">
     <view class="ipt-wrapper dis-flex flow-all-list">
       <input bindinput="bindRemark" placeholder="选填：买家留言（50字以内）" value="{{remark}}"></input>
