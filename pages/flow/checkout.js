@@ -34,7 +34,7 @@ Page({
     // 买家留言 取货人 取货人手机
     remark: '',
     pick_name: '',
-    pick_mobile: '1',
+    pick_mobile: '',
 
     // 禁用submit按钮
     disabled: false,
@@ -82,10 +82,7 @@ Page({
         App.showError(_this.data.error);
       }
       _this.setData(result.data);
-      console.log(result.data);
-      console.log(result.data.address.name);
-
-
+     
       _this.data.pick_name = result.data.address.name;
       _this.data.pick_mobile = result.data.address.phone;
 
@@ -291,22 +288,16 @@ Page({
    * 买家留言
    */
   bindRemark: function(e) {
-    console.log(e.detail.value);
-
     this.setData({
       remark: e.detail.value
     })
   },
   bindName: function (e) {
-    console.log(e.detail.value);
-    console.log(this.data);
-
     this.setData({
       pick_name: e.detail.value
     })
   },
   bindMobile: function (e) {
-    console.log(e.detail.value);
     this.setData({
       pick_mobile: e.detail.value
     })
