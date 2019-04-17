@@ -167,12 +167,12 @@ Page({
 
       return false;
     }
-    let reg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
-    if (!reg.test(this.data.pick_mobile)) {
-      App.showError('手机号不符合要求');
+    // let reg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
+    // if (!reg.test(this.data.pick_mobile)) {
+    //   App.showError('手机号不符合要求');
 
-      return false;
-    }
+    //   return false;
+    // }
     let _this = this,
       options = _this.data.options;
 
