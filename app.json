@@ -93,5 +93,6 @@
     "scope.userLocation": {
       "desc": "你的位置信息将用于为您提供更合适您的服务"
     }
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

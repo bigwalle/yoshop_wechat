@@ -33,8 +33,10 @@ Page({
       _this.setData(result.data)
       _this.data.schoolArray =result.data;
       // _this.setData({index:0}
+      console.log(result.data);
+
       _this.setData({
-        index:0,
+        index:0+1,
       })
     });
   },
@@ -47,6 +49,13 @@ Page({
       address_id
     }, function(result) {
       _this.setData(result.data);
+      console.log(result.data.detail);
+      // _this.data.goods_address = result.data.detail.goods_address;
+
+      _this.setData({
+        goods_address: result.data.detail.goods_address,
+        index: result.data.detail.school_id+1,
+      })
     });
   },
 
