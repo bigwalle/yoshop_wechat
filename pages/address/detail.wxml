@@ -25,7 +25,7 @@
         </view>
         <view class="right-cont flex-box">
           <picker bindchange="bindSchoolChange" value="{{index}}" range-key="name" range="{{list}}">
-            <text  wx:if="{{index}}" class="f-30 ">{{list[index-1].name}}</text>
+            <text  wx:if="{{index>=0}}" class="f-30 ">{{list[index].name}}</text>
             <text  wx:else class="f-30 col-7">选择学校</text>
           </picker>
           <input name="school_id" value="{{list[index].id}}" hidden="true"></input>

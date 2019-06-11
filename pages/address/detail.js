@@ -13,6 +13,9 @@ Page({
     goodAdress: ['1号楼', '2号楼', '3号楼', '4号楼', '5号楼', '6号楼', '7号楼', '8号楼', '9号楼', '10号楼', '11号楼', '12号楼', '13号楼', '14号楼', '15号楼', '16号楼', '17号楼', '18号楼', '19号楼', '20号楼', '21号楼', '22号楼', '23号楼', '24号楼', '25号楼', '26号楼', '27号楼', '28号楼', '29号楼', '30号楼',],
     goods_address: "1号楼",
     error: '',
+    schoolName:'青海大学',
+    school_id:'0',
+    index:-1,
   },
 
   /**
@@ -34,10 +37,20 @@ Page({
       _this.data.schoolArray =result.data;
       // _this.setData({index:0}
       console.log(result.data);
+      console.log(_this.school_id);
 
-      _this.setData({
-        index:0+1,
-      })
+      for (let i = 0; i < result.data.list.length; ++i) {
+        var x = result.data.list[i];
+        if (x.id == _this.school_id) {
+          _this.setData({
+            index: i,
+          })
+        }
+      }
+
+      // _this.setData({
+      //   index:0+1,
+      // })
     });
   },
   /**
@@ -49,12 +62,29 @@ Page({
       address_id
     }, function(result) {
       _this.setData(result.data);
-      console.log(result.data.detail);
-      // _this.data.goods_address = result.data.detail.goods_address;
-
       _this.setData({
         goods_address: result.data.detail.goods_address,
-        index: result.data.detail.school_id+1,
+        school_id: result.data.detail.school_id,
+      })
+      console.log("当前地址");
+      console.log(result.data.detail.school_id);
+      var  ind = 0;
+      for (let i = 0; i < _this.data.schoolArray.list.length; ++i) {
+        var x = _this.data.schoolArray.list[i];
+        console.log(x);
+        console.log(ind);
+        if (x.id == result.data.detail.school_id ){
+          console.log(x);
+          console.log(i);
+          ind = i;
+     
+        }
+      }
+      console.log(ind);
+      _this.setData({
+        goods_address: result.data.detail.goods_address,
+        school_id: result.data.detail.school_id,
+        index: ind,
       })
     });
   },
@@ -100,6 +130,7 @@ Page({
    * 表单验证
    */
   validation: function(values) {
+
     if (values.name === '') {
       this.data.error = '收件人不能为空';
       return false;
@@ -144,6 +175,8 @@ Page({
    * 修改地区
    */
   bindSchoolChange: function(e) {
+    console.log(e.detail.value);
+
     this.setData({
       index:e.detail.value,
     })
